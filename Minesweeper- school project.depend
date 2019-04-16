@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1555357965 source:d:\dev\minesweeper- school project\src\main.cpp
-	<SFML/System/Time.hpp>
+1555396996 source:d:\dev\minesweeper- school project\src\main.cpp
 	<SFML/Graphics.hpp>
+	"Window.hpp"
 
 1555356504 d:\dev\minesweeper- school project\sfml-2.5.1\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -799,4 +799,8 @@
 	<SFML/System/String.hpp>
 	<string>
 	<vector>
+
+1555397091 d:\dev\minesweeper- school project\src\window.hpp
+	<SFML/Graphics/RenderWindow.hpp>
+	<SFML/Window/Event.hpp>
 
