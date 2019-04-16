@@ -2,6 +2,9 @@
 
 Window::Window(sf::String title, unsigned int width, unsigned int height) {
 	m_Window = new sf::RenderWindow(sf::VideoMode(width, height), title);
+	this->title = title;
+	this->width = width;
+	this->height = height;
 }
 
 Window::~Window() {
@@ -9,7 +12,9 @@ Window::~Window() {
 }
 
 void Window::setSize(unsigned int width, unsigned int height) {
-	m_Window->setSize(sf::Vector2u(width, height));
+	m_Window->create(sf::VideoMode(width, height), title);
+	this->width = width;
+	this->height = height;
 }
 
 void Window::update() {

@@ -21,6 +21,10 @@ public:
 
 	int addEventListener(EventListener listener);
 
+public:
+	sf::String title;
+	int width, height;
+
 private:
 	sf::RenderWindow* m_Window;
 
