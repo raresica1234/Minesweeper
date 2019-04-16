@@ -2,3 +2,4 @@
 *.layout
 *.exe
 obj/
+.vscode/
