@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstdlib>
 #include <SFML/Graphics.hpp>
 #include "Window.hpp"
 
@@ -9,7 +10,7 @@ public:
 	 unsigned int border, unsigned int gridXCount, unsigned int gridYCount);
 	~Grid();
 
-	void draw(Window& window, char colors[]);
+	void draw(Window& window, char colors[], char mines[], sf::Font font);
 
 	void setTopOffset(unsigned int offset);
 

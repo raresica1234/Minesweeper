@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1557246898 source:d:\dev\minesweeper- school project\src\main.cpp
+1557259414 source:d:\dev\minesweeper- school project\src\main.cpp
 	<iostream>
+	<random>
 	<SFML/Graphics.hpp>
 	"Window.hpp"
 	"Grid.hpp"
@@ -809,14 +810,15 @@
 	<functional>
 	<iostream>
 
-1557247979 d:\dev\minesweeper- school project\src\grid.hpp
+1557254632 d:\dev\minesweeper- school project\src\grid.hpp
+	<cstdlib>
 	<SFML/Graphics.hpp>
 	"Window.hpp"
 
 1557167990 source:d:\dev\minesweeper- school project\src\window.cpp
 	"Window.hpp"
 
-1557247680 source:d:\dev\minesweeper- school project\src\grid.cpp
+1557259670 source:d:\dev\minesweeper- school project\src\grid.cpp
 	"Grid.hpp"
 
 1557245725 source:d:\dev\minesweeper- school project\src\button.cpp

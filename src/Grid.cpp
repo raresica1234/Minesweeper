@@ -13,13 +13,13 @@ Grid::~Grid() {
 }
 
 /*
--2 NOT OPENED
--1 MINE
- 0 EMPTY
- ... // until 8
+ 0 NOT OPENED
+ 1 EMPTY
+ 2 MINE
+ 3 FLAG
 */
 
-void Grid::draw(Window& window, char colors[]) {
+void Grid::draw(Window& window, char colors[], char mines[], sf::Font font) {
 	sf::RenderWindow* context = window.get();
 
 	sf::RectangleShape rekt;
@@ -30,20 +30,41 @@ void Grid::draw(Window& window, char colors[]) {
 	context->draw(rekt);
 	for(unsigned int i = 0; i <= gridXCount; i++) {
 		for(unsigned int j=0; j <= gridYCount; j++) {
+			sf::Text drawingText;
+			bool hasText = false;
+			sf::FloatRect texRect;
+			int drawX = border + i * border + i * width;
+			int drawY = border + topOffset + j * border + j * height;
 			switch (colors[i + j * gridXCount]) {
-			case 2:
+			case 0:
 				rekt.setFillColor(sf::Color(155, 155, 155));
                 break;
 			case 1:
+				rekt.setFillColor(sf::Color::White);
+				// draw number here if it should be here
+				if(mines[i + j * gridXCount] != 0){
+					drawingText.setFont(font);
+					drawingText.setString(sf::String((char)('0' + mines[i + j * gridXCount])));
+					drawingText.setFillColor(sf::Color(65 * mines[i + j * gridXCount], 45 * mines[i + j * gridXCount], 86 * mines[i + j * gridXCount]));
+					drawingText.setCharacterSize(std::min(width, height));
+					texRect = drawingText.getLocalBounds();
+					drawingText.setOrigin(texRect.left + texRect.width / 2.0f, texRect.top + texRect.height / 2.0f);
+					drawingText.setPosition(sf::Vector2f(drawX + width / 2.0f, drawY + height / 2.0f));
+					hasText = true;
+				}
+				break;
+			case 2:
 				rekt.setFillColor(sf::Color::Red);
 				break;
-			case 0:
-				rekt.setFillColor(sf::Color::White);
+			case 3:
+				rekt.setFillColor(sf::Color::Blue);
 				break;
 			}
 			rekt.setSize(sf::Vector2f(width, height));
-			rekt.setPosition(border + i * border + i * width, border + topOffset + j * border + j * height);
+			rekt.setPosition(drawX, drawY);
 			context->draw(rekt);
+			if(hasText)
+				context->draw(drawingText);
 		}
 	}
 

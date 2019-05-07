@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-std=c++11" />
 					<Add option="-g" />
@@ -44,6 +45,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="src/Button.cpp" />
+		<Unit filename="src/Button.hpp" />
 		<Unit filename="src/Grid.cpp" />
 		<Unit filename="src/Grid.hpp" />
 		<Unit filename="src/Window.cpp" />
