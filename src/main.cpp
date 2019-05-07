@@ -19,7 +19,7 @@ int main()
 	window.setSize(grid.getRequiredWidth(), grid.getRequiredHeight());
 
     Button button("Restart", 10, 5, 50, 20, arial);
-
+	button.setFontSize(15);
     bool test = false;
 
     button.setOnClickButtonListener([&](sf::Event& e) {

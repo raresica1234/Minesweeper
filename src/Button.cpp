@@ -3,6 +3,10 @@
 Button::Button(sf::String text, unsigned int x, unsigned int y, unsigned int width, unsigned int height, sf::Font font)
 	: text(text), x(x), y(y), width(width), height(height), font(font) {
 
+    drawingText.setFont(font);
+    drawingText.setString(text);
+    drawingText.setFillColor(sf::Color::Black);
+    drawingText.setPosition(x, y);
 }
 
 Button::~Button() {
@@ -15,14 +19,7 @@ void Button::draw(Window& window) {
 	rect.setSize(sf::Vector2f(width, height));
     rect.setFillColor(sf::Color::Cyan);
     window.get()->draw(rect);
-
-    sf::Text t;
-    t.setFont(font);
-    t.setString(text);
-    t.setCharacterSize(height - 10);
-    t.setFillColor(sf::Color::Black);
-    t.setPosition(x, y);
-    window.get()->draw(t);
+    window.get()->draw(drawingText);
 }
 
 void Button::subscribe(Window& window) {
