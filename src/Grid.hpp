@@ -9,12 +9,18 @@ public:
 	 unsigned int border, unsigned int gridXCount, unsigned int gridYCount);
 	~Grid();
 
-	void draw(Window& window);
+	void draw(Window& window, char colors[]);
 
 	void setTopOffset(unsigned int offset);
 
-	inline int getRequiredWidth(){ return requiredWidth; }
-	inline int getRequiredHeight(){ return requiredHeight; }
+	inline unsigned int getRequiredWidth() { return requiredWidth; }
+	inline unsigned int getRequiredHeight() { return requiredHeight; }
+
+	inline unsigned int getCellWidth() { return width; }
+	inline unsigned int getCellHeight() { return height; }
+	inline unsigned int getTopOffset() { return topOffset; }
+
+	sf::Vector2i getCellPosition(int x, int y);
 
 private:
 	unsigned int width;
