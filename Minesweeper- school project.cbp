@@ -44,7 +44,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="src/Grid.cpp" />
 		<Unit filename="src/Grid.hpp" />
+		<Unit filename="src/Window.cpp" />
+		<Unit filename="src/Window.hpp" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />

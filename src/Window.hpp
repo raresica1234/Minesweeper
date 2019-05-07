@@ -2,8 +2,10 @@
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
+#include <functional>
+#include <iostream>
 
-typedef void (*EventListener)(sf::Event&);
+using EventListener = std::function<void(sf::Event& e)>;
 
 class Window {
 public:
@@ -19,7 +21,7 @@ public:
 
 	void display();
 
-	int addEventListener(EventListener listener);
+	void addEventListener(EventListener listener);
 
 public:
 	sf::String title;

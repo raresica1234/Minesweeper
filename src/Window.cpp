@@ -22,7 +22,6 @@ void Window::update() {
 
 	sf::Event event;
 	while(m_Window->pollEvent(event)) {
-
 		for(unsigned int i = 0; i < m_listeners.size(); i++) {
 			m_listeners[i](event);
 		}
@@ -34,4 +33,8 @@ void Window::update() {
 
 void Window::display() {
 	m_Window->display();
+}
+
+void Window::addEventListener(EventListener listener) {
+	m_listeners.push_back(listener);
 }
